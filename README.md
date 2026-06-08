@@ -28,6 +28,5 @@ The assessment included:
 - Performed control testing and validation
 
 ## Repository Contents
-- GRC assessment export (.json)
 - Project screenshots
 - Documentation and project artifacts
