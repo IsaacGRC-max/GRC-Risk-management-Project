@@ -1,0 +1,968 @@
+{
+  "assets": [
+    {
+      "id": "AST-mpws7w55",
+      "name": "Customer Database",
+      "type": "Database",
+      "classification": "Critical",
+      "owner": "Chief Data Officer (CDO)",
+      "environment": "Production",
+      "description": "Store's customer information used to support business operations and customer accounts. Contain sensitive data that must be protected from unauthorized access.",
+      "createdAt": "2026-06-02T15:18:03.641Z",
+      "updatedAt": "2026-06-02T15:18:03.641Z"
+    },
+    {
+      "id": "AST-mpws9y21",
+      "name": "IAM System",
+      "type": "Application",
+      "classification": "Critical",
+      "owner": "IAM Manager",
+      "environment": "Production",
+      "description": "Manages user identities and controls access to company systems, applications, and data. Ensures users have appropriate permissions based on their job responsibilities.",
+      "createdAt": "2026-06-02T15:19:39.433Z",
+      "updatedAt": "2026-06-02T15:19:39.433Z"
+    },
+    {
+      "id": "AST-mpwsbvvd",
+      "name": "AWS Cloud Environment",
+      "type": "Server",
+      "classification": "Critical",
+      "owner": "Cloud Infrastructure Manager",
+      "environment": "Production",
+      "description": "Hostel organization, application database, storage, and cloud resources. Required to support business operations and customer services.",
+      "createdAt": "2026-06-02T15:21:09.913Z",
+      "updatedAt": "2026-06-02T15:21:09.913Z"
+    },
+    {
+      "id": "AST-mpwselsn",
+      "name": "Active Directory.",
+      "type": "Cloud Account",
+      "classification": "High",
+      "owner": "IT Operations Manager ",
+      "environment": "Production",
+      "description": "Manages employee accounts, authentication, group membership and access permissions across the organization's network and systems.",
+      "createdAt": "2026-06-02T15:23:16.823Z",
+      "updatedAt": "2026-06-02T15:24:05.670Z"
+    }
+  ],
+  "vendors": [],
+  "policies": [],
+  "risks": [
+    {
+      "id": "RSK-mpwsv4k2",
+      "title": "Unauthorized access to sensitive customer data",
+      "category": "Data Protection",
+      "status": "Open",
+      "likelihood": 4,
+      "impact": 3,
+      "owner": "Chief Data Officer (CDO)",
+      "description": "",
+      "rationale": "Unauthorized access may occur through compromised accounts or insufficient access controls. The impact is moderate because exposure of customer information could result in privacy concerns, reputational damage, and compliance issues.",
+      "createdAt": "2026-06-02T15:36:07.634Z",
+      "updatedAt": "2026-06-06T22:16:14.253Z"
+    },
+    {
+      "id": "RSK-mpwswxz0",
+      "title": "IAM Systems excessive permissions granted to users.",
+      "category": "Access Control",
+      "status": "Open",
+      "likelihood": 5,
+      "impact": 4,
+      "owner": "IAM Manager",
+      "description": "",
+      "rationale": "Users may accumulate excessive permissions over time, increasing the likelihood of unauthorized access. The impact is major because excessive privileges could allow access to sensitive systems and data, resulting in security, compliance, and operational risks",
+      "createdAt": "2026-06-02T15:37:32.413Z",
+      "updatedAt": "2026-06-06T22:15:12.940Z"
+    },
+    {
+      "id": "RSK-mpwsyegl",
+      "title": "AWS cloud environment. Misconfigured cloud resources exposing data.",
+      "category": "Application Security",
+      "status": "In Progress",
+      "likelihood": 3,
+      "impact": 5,
+      "owner": "Cloud Manager",
+      "description": "",
+      "rationale": "Cloud misconfigurations can occur due to human error or incorrect security settings. The impact is critical because exposed cloud resources could lead to unauthorized access, data breaches, regulatory violations, and financial losses.",
+      "createdAt": "2026-06-02T15:38:40.437Z",
+      "updatedAt": "2026-06-06T22:16:59.460Z"
+    },
+    {
+      "id": "RSK-mpwt3ozx",
+      "title": "Active Directory  compromise admin credentials.",
+      "category": "Data Protection",
+      "status": "Closed",
+      "likelihood": 4,
+      "impact": 4,
+      "owner": "IT Operations Manager",
+      "description": "",
+      "rationale": "Administrative credentials may be targeted by phishing, password attacks, or credential theft. The likelihood is reduced because security controls such as MFA are in place. The impact remains moderate because compromised administrative accounts could provide elevated access to critical systems.",
+      "createdAt": "2026-06-02T15:42:47.374Z",
+      "updatedAt": "2026-06-06T22:16:44.184Z"
+    }
+  ],
+  "controls": [
+    {
+      "id": "CTL-mpwtr66m",
+      "name": "Enforce role  based access control and quarterly access reviews.",
+      "description": "The organization enforces road based access control to ensure users are granted access only to systems and data required for their job responsibilities. Access rights are reviewed quarterly by the IAM  manager to identify and remove excessive unnecessary permissions.",
+      "category": "Access Control",
+      "owner": "IAM Manager",
+      "frequency": "Quarterly",
+      "status": "Effective",
+      "effectiveness": "Effective",
+      "framework": "ISO 27001",
+      "ref": "A.5.15",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.15",
+          "relationshipType": "Equal",
+          "rationale": "Road based access control ensures users receive access based on job responsibilities and business needs. Quarterly access reviews verify permissions remain appropriate and remove excessive privileges. This control reduces the risk of unauthorized access."
+        },
+        {
+          "framework": "NIST CSF",
+          "ref": "PR.AA-05",
+          "relationshipType": "Equal",
+          "rationale": "Role-based access control and quarterly access reviews ensure users receive only the access necessary for their job responsibilities and help prevent unauthorized access."
+        },
+        {
+          "framework": "SOC 2",
+          "ref": "CC6.1",
+          "relationshipType": "Equal",
+          "rationale": "The control restricts logical access based on business need and periodically validates permissions through access reviews."
+        },
+        {
+          "framework": "CIS Controls",
+          "ref": "CIS 6",
+          "relationshipType": "Equal",
+          "rationale": "Role-based access control and access reviews support the management of user accounts and privileges."
+        }
+      ],
+      "rationale": "Road based access control ensures users receive access based on job responsibilities and business needs. Quarterly access reviews verify permissions remain appropriate and remove excessive privileges. This control reduces the risk of unauthorized access.",
+      "createdAt": "2026-06-02T16:01:02.734Z",
+      "updatedAt": "2026-06-06T01:33:46.681Z"
+    },
+    {
+      "id": "CTL-mpwtspxj",
+      "name": "Perform monthly cloud configuration reviews",
+      "description": "This control supports configuration management by ensuring cloud resources are reviewed regularly to verify they remain securely configured. The reviews help identify configuration drift, insecure settings, and unauthorized changes before they lead to security incidents.",
+      "category": "Access Control",
+      "owner": "Cloud Infrastructure Manager",
+      "frequency": "Monthly",
+      "status": "Effective",
+      "effectiveness": "Effective",
+      "framework": "NIST CSF",
+      "ref": "PR.PS-01",
+      "frameworkRefs": [
+        {
+          "framework": "NIST CSF",
+          "ref": "PR.PS-01",
+          "relationshipType": "Equal",
+          "rationale": "Monthly cloud configuration reviews help ensure cloud platforms and services remain securely configured and protected from unauthorized or insecure changes."
+        },
+        {
+          "framework": "SOC 2",
+          "ref": "CC7.1",
+          "relationshipType": "Equal",
+          "rationale": "Regular reviews identify misconfigurations and control weaknesses that could impact the security, availability, or confidentiality of cloud resources."
+        },
+        {
+          "framework": "CIS Controls",
+          "ref": "CIS 6",
+          "relationshipType": "Equal",
+          "rationale": "The organization reviews cloud configurations to verify systems remain securely configured and aligned with approved security baselines."
+        },
+        {
+          "framework": "PCI DSS",
+          "ref": "2.2",
+          "relationshipType": "Equal",
+          "rationale": "Configuration reviews help ensure cloud systems maintain secure settings and reduce the risk of unauthorized access or exposure of sensitive data."
+        },
+        {
+          "framework": "ISO 27001",
+          "ref": "A.8.9",
+          "relationshipType": "Equal",
+          "rationale": "Monthly cloud configuration reviews help ensure cloud systems remain securely configured, approved baseline settings are maintained, and unauthorized or insecure configuration changes are identified and corrected."
+        }
+      ],
+      "rationale": "Monthly cloud configuration reviews help ensure cloud platforms and services remain securely configured and protected from unauthorized or insecure changes.",
+      "createdAt": "2026-06-02T16:02:14.983Z",
+      "updatedAt": "2026-06-06T15:41:39.115Z"
+    },
+    {
+      "id": "CTL-mpwttuim",
+      "name": "Customer database requires MFA and encryption for customer data access.",
+      "description": "This control requires MFA and encryption for customer database access. MFA helps ensure only authorized users can access the database, while encryption protects sensitive customer information if data is intercepted or exposed. Together they reduce the likelihood and impact of a data breach.",
+      "category": "Access Control",
+      "owner": "Chief Data Officer",
+      "frequency": "Continuous",
+      "status": "Effective",
+      "effectiveness": "Effective",
+      "framework": "ISO 27001",
+      "ref": "A.5.15",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.15",
+          "relationshipType": "Equal",
+          "rationale": "MFA restricts access to authorized users while encryption protects customer data from unauthorized disclosure. Together they reduce the risk of data breaches and support the protection of sensitive information."
+        },
+        {
+          "framework": "NIST CSF",
+          "ref": "PR.AA-06",
+          "relationshipType": "Equal",
+          "rationale": "MFA strengthens identity verification and helps ensure only authorized users can access customer databases containing sensitive information."
+        },
+        {
+          "framework": "SOC 2",
+          "ref": "CC6.1",
+          "relationshipType": "Equal",
+          "rationale": "Access to customer data is restricted through MFA and protected through encryption to maintain confidentiality and reduce unauthorized access risk."
+        },
+        {
+          "framework": "PCI DSS",
+          "ref": "3.1",
+          "relationshipType": "Equal",
+          "rationale": "Encryption protects stored customer data while MFA helps prevent unauthorized access to systems containing sensitive information."
+        },
+        {
+          "framework": "HIPAA",
+          "ref": "164.312(a)(1)",
+          "relationshipType": "Equal",
+          "rationale": "Encryption and strong authentication mechanisms help protect sensitive data and support technical safeguards for information security."
+        },
+        {
+          "framework": "CIS Controls",
+          "ref": "CIS 3.3",
+          "relationshipType": "Equal",
+          "rationale": "The control protects sensitive customer data through encryption and limits access using multi-factor authentication."
+        }
+      ],
+      "rationale": "MFA restricts access to authorized users while encryption protects customer data from unauthorized disclosure. Together they reduce the risk of data breaches and support the protection of sensitive information.",
+      "createdAt": "2026-06-02T16:03:07.582Z",
+      "updatedAt": "2026-06-06T16:23:49.534Z"
+    },
+    {
+      "id": "CTL-mpwtuuda",
+      "name": "Active Directory Required MFA for privileged Active Directory accounts.",
+      "description": "",
+      "category": "Access Control",
+      "owner": "IT Operations Manager.",
+      "frequency": "Continuous",
+      "status": "Effective",
+      "effectiveness": "Effective",
+      "framework": "ISO 27001",
+      "ref": "A.5.15",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.15",
+          "relationshipType": "Equal",
+          "rationale": "Privileged accounts present a higher risk if compromised. MFA provides an additional layer of authentication and helps prevent unauthorized access to administrative accounts."
+        },
+        {
+          "framework": "NIST CSF",
+          "ref": "PR.AA-05",
+          "relationshipType": "Equal",
+          "rationale": "Multi-factor authentication strengthens identity verification and reduces the likelihood of unauthorized access to privileged accounts."
+        },
+        {
+          "framework": "SOC 2",
+          "ref": "CC6.1",
+          "relationshipType": "Equal",
+          "rationale": "Privileged account access is restricted through strong authentication controls to protect critical systems and sensitive resources."
+        },
+        {
+          "framework": "PCI DSS",
+          "ref": "8.4",
+          "relationshipType": "Equal",
+          "rationale": "MFA is required for privileged users to reduce the risk of credential compromise and unauthorized access."
+        },
+        {
+          "framework": "CIS Controls",
+          "ref": "CIS 6",
+          "relationshipType": "Equal",
+          "rationale": "The organization uses MFA for privileged accounts to strengthen access control and protect administrative functions."
+        }
+      ],
+      "rationale": "Privileged accounts present a higher risk if compromised. MFA provides an additional layer of authentication and helps prevent unauthorized access to administrative accounts.",
+      "createdAt": "2026-06-02T16:03:54.046Z",
+      "updatedAt": "2026-06-06T16:18:33.805Z"
+    },
+    {
+      "id": "CTL-mq2vf3g6",
+      "name": "Sensitive data is classified and handled according to data classification requirements.",
+      "description": "Information is classified based on sensitivity and business requirements. Data owners are responsible for assigning classification levels and ensuring information is handled, stored, transmitted, and disposed of according to established classification standards.",
+      "category": "Data Protection",
+      "owner": "Data Owner",
+      "frequency": "Continuous",
+      "status": "Effective",
+      "effectiveness": "Effective",
+      "framework": "ISO 27001",
+      "ref": "A.5.12",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.12",
+          "relationshipType": "Equal",
+          "rationale": "Data classification ensures sensitive information receives appropriate protection based on its value, sensitivity, and business requirements."
+        }
+      ],
+      "rationale": "Data classification ensures sensitive information receives appropriate protection based on its value, sensitivity, and business requirements.",
+      "createdAt": "2026-06-06T21:34:15.606Z",
+      "updatedAt": "2026-06-06T21:34:15.606Z"
+    },
+    {
+      "id": "CTL-mq2vyalb",
+      "name": "User identities are managed through a formal onboarding, modification, and termination process",
+      "description": "User accounts are created, modified, and disabled through a documented identity management process to ensure appropriate access is granted and removed in a timely manner.",
+      "category": "Access Control",
+      "owner": "IAM Manager",
+      "frequency": "Continuous",
+      "status": "Effective",
+      "effectiveness": "Effective",
+      "framework": "ISO 27001",
+      "ref": "A.5.16",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.16",
+          "relationshipType": "Equal",
+          "rationale": "User identities are managed throughout their lifecycle to ensure appropriate access is granted and removed."
+        }
+      ],
+      "rationale": "User identities are managed throughout their lifecycle to ensure appropriate access is granted and removed.",
+      "createdAt": "2026-06-06T21:49:11.327Z",
+      "updatedAt": "2026-06-06T21:49:11.327Z"
+    },
+    {
+      "id": "CTL-mq2w1j2k",
+      "name": "Password and authentication requirements are enforced for all user accounts",
+      "description": "Authentication controls, including password requirements and multi-factor authentication where applicable, are implemented to verify user identities and prevent unauthorized access.",
+      "category": "Access Control",
+      "owner": "IAM Manager",
+      "frequency": "Continuous",
+      "status": "Effective",
+      "effectiveness": "Effective",
+      "framework": "ISO 27001",
+      "ref": "A.5.17",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.17",
+          "relationshipType": "Equal",
+          "rationale": ""
+        }
+      ],
+      "rationale": "",
+      "createdAt": "2026-06-06T21:51:42.284Z",
+      "updatedAt": "2026-06-06T21:51:42.284Z"
+    },
+    {
+      "id": "CTL-mq2w3m12",
+      "name": "Employees complete annual security awareness and phishing training",
+      "framework": "ISO 27001",
+      "ref": "A.6.3",
+      "effectiveness": "Effective",
+      "status": "Effective",
+      "frequency": "Annual",
+      "owner": "Security Trainer",
+      "description": "All employees receive security awareness training to improve their understanding of cybersecurity threats, organizational policies, and their responsibilities for protecting information assets.",
+      "rationale": "Employees receive training to recognize threats and follow security policies.",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.6.3",
+          "relationshipType": "Equal",
+          "rationale": "Employees receive training to recognize threats and follow security policies."
+        }
+      ],
+      "createdAt": "2026-06-06T21:53:19.430Z",
+      "updatedAt": "2026-06-06T21:56:13.949Z"
+    },
+    {
+      "id": "CTL-mq2w5r07",
+      "name": "Security logs are collected and reviewed weekly for suspicious activity.",
+      "description": "Security logs are generated, retained, and reviewed regularly to detect suspicious activity, support investigations, and improve the organization's ability to identify security incidents",
+      "category": "Access Control",
+      "owner": "Security Operations Team",
+      "frequency": "Weekly",
+      "status": "Effective",
+      "effectiveness": "Effective",
+      "framework": "ISO 27001",
+      "ref": "A.8.15",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.8.15",
+          "relationshipType": "Equal",
+          "rationale": "Security logs are monitored to identify suspicious activity and support incident investigations."
+        }
+      ],
+      "rationale": "Security logs are monitored to identify suspicious activity and support incident investigations.",
+      "createdAt": "2026-06-06T21:54:59.191Z",
+      "updatedAt": "2026-06-06T21:54:59.191Z"
+    },
+    {
+      "id": "CTL-mq5fh7jl",
+      "name": "Policies for information security",
+      "framework": "ISO 27001",
+      "ref": "A.5.1",
+      "effectiveness": "Effective",
+      "status": "Effective",
+      "frequency": "Monthly",
+      "owner": "Security Team",
+      "description": "Information security policy and topic-specific policies shall be defined.",
+      "rationale": "Information security policies have been established, documented, communicated to personnel, and are reviewed periodically to support organizational security objectives.",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.1",
+          "relationshipType": "Equal",
+          "rationale": "Information security policies have been established, documented, communicated to personnel, and are reviewed periodically to support organizational security objectives."
+        }
+      ],
+      "createdAt": "2026-06-08T16:31:18.897Z",
+      "updatedAt": "2026-06-08T16:31:18.897Z"
+    },
+    {
+      "id": "CTL-mq5fiutp",
+      "name": "Information security roles and responsibilities",
+      "framework": "ISO 27001",
+      "ref": "A.5.2",
+      "effectiveness": "Effective",
+      "status": "Effective",
+      "frequency": "Continuous",
+      "owner": "Security Team ",
+      "description": "Information security roles and responsibilities shall be defined and allocated.",
+      "rationale": "Security roles and responsibilities are formally defined and communicated to personnel responsible for maintaining security controls.",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.2",
+          "relationshipType": "Equal",
+          "rationale": "Security roles and responsibilities are formally defined and communicated to personnel responsible for maintaining security controls."
+        }
+      ],
+      "createdAt": "2026-06-08T16:32:35.725Z",
+      "updatedAt": "2026-06-08T16:32:35.725Z"
+    },
+    {
+      "id": "CTL-mq5fkefs",
+      "name": "Segregation of duties",
+      "framework": "ISO 27001",
+      "ref": "A.5.3",
+      "effectiveness": "Effective",
+      "status": "Effective",
+      "frequency": "Continuous",
+      "owner": "IT Operations",
+      "description": "Conflicting duties and areas of responsibility shall be segregated.",
+      "rationale": "Duties are separated to reduce the risk of unauthorized activities and conflicts of interest within critical business processes.",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.3",
+          "relationshipType": "Equal",
+          "rationale": "Duties are separated to reduce the risk of unauthorized activities and conflicts of interest within critical business processes."
+        }
+      ],
+      "createdAt": "2026-06-08T16:33:47.800Z",
+      "updatedAt": "2026-06-08T16:33:47.800Z"
+    },
+    {
+      "id": "CTL-mq5flrj8",
+      "name": "Inventory of information and assets",
+      "framework": "ISO 27001",
+      "ref": "A.5.9",
+      "effectiveness": "Effective",
+      "status": "Effective",
+      "frequency": "Continuous",
+      "owner": "Asset Management Team ",
+      "description": "An inventory of information and associated assets shall be maintained.",
+      "rationale": "Information assets are inventoried and maintained through documented asset management processes.",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.9",
+          "relationshipType": "Equal",
+          "rationale": "Information assets are inventoried and maintained through documented asset management processes."
+        }
+      ],
+      "createdAt": "2026-06-08T16:34:51.428Z",
+      "updatedAt": "2026-06-08T16:34:51.428Z"
+    },
+    {
+      "id": "CTL-mq5fmqst",
+      "name": "Acceptable use of information",
+      "framework": "ISO 27001",
+      "ref": "A.5.10",
+      "effectiveness": "Effective",
+      "status": "Effective",
+      "frequency": "Continuous",
+      "owner": "Security Team",
+      "description": "Rules for acceptable use shall be identified and documented.",
+      "rationale": "Acceptable use requirements have been documented and communicated to users to ensure proper handling of organizational information assets.",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.10",
+          "relationshipType": "Equal",
+          "rationale": "Acceptable use requirements have been documented and communicated to users to ensure proper handling of organizational information assets."
+        }
+      ],
+      "createdAt": "2026-06-08T16:35:37.133Z",
+      "updatedAt": "2026-06-08T16:35:37.133Z"
+    },
+    {
+      "id": "CTL-mq5ghmio",
+      "name": "Management responsibilities",
+      "framework": "ISO 27001",
+      "ref": "A.5.4",
+      "effectiveness": "Effective",
+      "status": "Effective",
+      "frequency": "Continuous",
+      "owner": "Management Team",
+      "description": "Management shall require personnel to apply information security.",
+      "rationale": "Effective because management supports and enforces information security requirements across the organization.",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.4",
+          "relationshipType": "Equal",
+          "rationale": "Effective because management supports and enforces information security requirements across the organization."
+        }
+      ],
+      "createdAt": "2026-06-08T16:59:37.920Z",
+      "updatedAt": "2026-06-08T16:59:37.920Z"
+    },
+    {
+      "id": "CTL-mq5gid98",
+      "name": "Contact with authorities",
+      "framework": "ISO 27001",
+      "ref": "A.5.5",
+      "effectiveness": "Not Tested",
+      "status": "Not Tested",
+      "frequency": "Continuous",
+      "owner": "Compliance Team",
+      "description": "Appropriate contacts with relevant authorities shall be maintained.",
+      "rationale": "Effective because procedures exist for communicating with regulators, law enforcement, and other authorities when required.",
+      "frameworkRefs": [
+        {
+          "framework": "ISO 27001",
+          "ref": "A.5.5",
+          "relationshipType": "Equal",
+          "rationale": "Effective because procedures exist for communicating with regulators, law enforcement, and other authorities when required."
+        }
+      ],
+      "createdAt": "2026-06-08T17:00:12.572Z",
+      "updatedAt": "2026-06-08T17:00:12.572Z"
+    }
+  ],
+  "treatments": [
+    {
+      "id": "TRT-mq2y2trj",
+      "riskId": "RSK-mpwsv4k2",
+      "issueId": null,
+      "type": "Mitigate",
+      "strategy": "Mitigate",
+      "status": "In Progress",
+      "owner": "Security Team",
+      "dueDate": "2026-07-06",
+      "targetDate": "2026-07-06",
+      "plan": "Implement role-based access control (RBAC), enforce multi-factor authentication (MFA), conduct quarterly access reviews, and monitor user activity logs to prevent unauthorized access to customer data",
+      "description": "Implement role-based access control (RBAC), enforce multi-factor authentication (MFA), conduct quarterly access reviews, and monitor user activity logs to prevent unauthorized access to customer data",
+      "createdAt": "2026-06-06T22:48:42.031Z",
+      "updatedAt": "2026-06-06T22:50:34.571Z"
+    },
+    {
+      "id": "TRT-mq2y51mp",
+      "riskId": "RSK-mpwswxz0",
+      "issueId": null,
+      "type": "Mitigate",
+      "strategy": "Mitigate",
+      "status": "Planned",
+      "owner": "IAM Admin",
+      "dueDate": "2026-07-07",
+      "targetDate": "2026-07-07",
+      "plan": "Review all user accounts and remove unnecessary permissions. Implement role-based access control (RBAC), enforce the principle of least privilege, and conduct quarterly access reviews to ensure users only have access required for their job responsibilities.",
+      "description": "Review all user accounts and remove unnecessary permissions. Implement role-based access control (RBAC), enforce the principle of least privilege, and conduct quarterly access reviews to ensure users only have access required for their job responsibilities.",
+      "createdAt": "2026-06-06T22:50:25.537Z",
+      "updatedAt": "2026-06-06T22:50:25.537Z"
+    },
+    {
+      "id": "TRT-mq2y7d7r",
+      "riskId": "RSK-mpwsyegl",
+      "issueId": null,
+      "type": "Mitigate",
+      "strategy": "Mitigate",
+      "status": "Planned",
+      "owner": "Cloud security team",
+      "dueDate": "2026-07-06",
+      "targetDate": "2026-07-06",
+      "plan": "Review and correct cloud resource configurations, enable security monitoring, enforce least privilege access controls, and perform regular configuration audits to prevent accidental exposure of sensitive data.",
+      "description": "Review and correct cloud resource configurations, enable security monitoring, enforce least privilege access controls, and perform regular configuration audits to prevent accidental exposure of sensitive data.",
+      "createdAt": "2026-06-06T22:52:13.863Z",
+      "updatedAt": "2026-06-06T22:52:13.864Z"
+    },
+    {
+      "id": "TRT-mq2y8q6n",
+      "riskId": "RSK-mpwt3ozx",
+      "issueId": null,
+      "type": "Mitigate",
+      "strategy": "Mitigate",
+      "status": "Planned",
+      "owner": "IT Security Team",
+      "dueDate": "2026-07-06",
+      "targetDate": "2026-07-06",
+      "plan": "Implement multi-factor authentication (MFA) for administrator accounts, enforce strong password policies, use privileged access management (PAM), and monitor administrative account activity to detect and prevent unauthorized access.",
+      "description": "Implement multi-factor authentication (MFA) for administrator accounts, enforce strong password policies, use privileged access management (PAM), and monitor administrative account activity to detect and prevent unauthorized access.",
+      "createdAt": "2026-06-06T22:53:17.327Z",
+      "updatedAt": "2026-06-06T22:53:28.897Z"
+    }
+  ],
+  "issues": [],
+  "incidents": [],
+  "tasks": [],
+  "audits": [],
+  "evidence": [
+    {
+      "id": "EVD-mq5f636k",
+      "title": "MFA Configuration Review",
+      "type": "Screenshot",
+      "relatedTo": "CTL-mpwttuim",
+      "related": "CTL-mpwttuim",
+      "controlId": "CTL-mpwttuim",
+      "owner": "Isaac MIller",
+      "url": "",
+      "notes": "Screenshot and review results confirming MFA is enabled for customer database access and encryption requirements are enforced",
+      "createdAt": "2026-06-08T16:22:40.028Z",
+      "updatedAt": "2026-06-08T16:22:40.028Z",
+      "uploadedAt": "2026-06-08T16:22:40.028Z",
+      "attachment": null
+    },
+    {
+      "id": "EVD-mq5f74kb",
+      "title": "IAM Access Review Results",
+      "type": "Document",
+      "relatedTo": "CTL-mpwtr66m",
+      "related": "CTL-mpwtr66m",
+      "controlId": "CTL-mpwtr66m",
+      "owner": "Isaac Miller",
+      "url": "",
+      "notes": "Access review documentation confirming user permissions align with job responsibilities and least privilege requirements.",
+      "createdAt": "2026-06-08T16:23:28.475Z",
+      "updatedAt": "2026-06-08T16:23:28.475Z",
+      "uploadedAt": "2026-06-08T16:23:28.475Z",
+      "attachment": null
+    },
+    {
+      "id": "EVD-mq5f87uh",
+      "title": "Cloud Configuration Audit Report",
+      "type": "Report",
+      "relatedTo": "CTL-mpwtspxj",
+      "related": "CTL-mpwtspxj",
+      "controlId": "CTL-mpwtspxj",
+      "owner": "Isaac Miller",
+      "url": "",
+      "notes": "Configuration review report confirming cloud resources were reviewed for security misconfigurations and unauthorized public exposure.",
+      "createdAt": "2026-06-08T16:24:19.386Z",
+      "updatedAt": "2026-06-08T16:24:19.386Z",
+      "uploadedAt": "2026-06-08T16:24:19.386Z",
+      "attachment": null
+    },
+    {
+      "id": "EVD-mq5f8try",
+      "title": "Active Directory MFA Verification",
+      "type": "Screenshot",
+      "relatedTo": "CTL-mpwtuuda",
+      "related": "CTL-mpwtuuda",
+      "controlId": "CTL-mpwtuuda",
+      "owner": "Isaac Miller",
+      "url": "",
+      "notes": "Verification results confirming MFA is enforced for privileged Active Directory accounts and administrative access is appropriately restricted.",
+      "createdAt": "2026-06-08T16:24:47.806Z",
+      "updatedAt": "2026-06-08T16:24:47.806Z",
+      "uploadedAt": "2026-06-08T16:24:47.806Z",
+      "attachment": null
+    }
+  ],
+  "controlTests": [
+    {
+      "id": "TST-mq2ygzzk",
+      "controlId": "CTL-mpwttuim",
+      "testDate": "2026-06-06",
+      "result": "Pass",
+      "tester": "Isaac miller",
+      "procedure": "Verify that multi factor authentication is required for database access and that customer data is encrypted at rest and in transit. No exceptions were identified during the testing.",
+      "createdAt": "2026-06-06T22:59:43.280Z",
+      "updatedAt": "2026-06-06T22:59:43.280Z"
+    },
+    {
+      "id": "TST-mq2yhwqp",
+      "controlId": "CTL-mpwtr66m",
+      "testDate": "2026-06-06",
+      "result": "Pass",
+      "tester": "Isaac Miller",
+      "procedure": "Reviewed user access permissions and confirmed access is assigned according to job responsibilities. Quarterly access review process is documented and operating effectively.",
+      "createdAt": "2026-06-06T23:00:25.729Z",
+      "updatedAt": "2026-06-06T23:00:25.729Z"
+    },
+    {
+      "id": "TST-mq5f24c7",
+      "controlId": "CTL-mpwtspxj",
+      "testDate": "2026-06-06",
+      "result": "Pass",
+      "tester": "Isaac Miller",
+      "procedure": "Reviewed cloud resource configurations and confirmed no publicly exposed storage or misconfigured resources were identified. Configuration review process is documented and functioning as intended.",
+      "createdAt": "2026-06-08T16:19:34.903Z",
+      "updatedAt": "2026-06-08T16:19:34.903Z"
+    },
+    {
+      "id": "TST-mq5f30t6",
+      "controlId": "CTL-mpwtuuda",
+      "testDate": "2026-06-08",
+      "result": "Pass",
+      "tester": "Isaac Miller",
+      "procedure": "Verified privileged Active Directory accounts require MFA and administrative access is restricted to authorized personnel. No control deficiencies were identified.",
+      "createdAt": "2026-06-08T16:20:16.986Z",
+      "updatedAt": "2026-06-08T16:20:16.986Z"
+    }
+  ],
+  "findings": [
+    {
+      "id": "FND-mq5fcf3y",
+      "title": "Opportunity to Enhance Continuous Monitoring Procedures",
+      "severity": "Low",
+      "status": "In Progress",
+      "source": "Other",
+      "relatedControl": "CTL-mq2w5r07",
+      "owner": "Isaac MIller",
+      "dueDate": "2026-07-06",
+      "description": "Control testing confirmed that security logs are reviewed weekly; however, opportunities exist to improve continuous monitoring and automate alert review processes.",
+      "recommendation": "Implement automated alerting and continuous monitoring capabilities to improve detection and response times for potential security events.",
+      "createdAt": "2026-06-08T16:27:35.422Z",
+      "updatedAt": "2026-06-08T16:27:35.422Z"
+    }
+  ],
+  "soaEntries": [],
+  "requirements": [],
+  "exceptions": [],
+  "activityLog": [
+    {
+      "id": "LOG-mq5f8try",
+      "ts": "2026-06-08T16:24:47.806Z",
+      "type": "evidence",
+      "message": "Added evidence EVD-mq5f8try",
+      "meta": {
+        "id": "EVD-mq5f8try"
+      },
+      "project": null
+    },
+    {
+      "id": "LOG-mq5f87ui",
+      "ts": "2026-06-08T16:24:19.386Z",
+      "type": "evidence",
+      "message": "Added evidence EVD-mq5f87uh",
+      "meta": {
+        "id": "EVD-mq5f87uh"
+      },
+      "project": null
+    },
+    {
+      "id": "LOG-mq5f74kc",
+      "ts": "2026-06-08T16:23:28.476Z",
+      "type": "evidence",
+      "message": "Added evidence EVD-mq5f74kb",
+      "meta": {
+        "id": "EVD-mq5f74kb"
+      },
+      "project": null
+    },
+    {
+      "id": "LOG-mq5f636l",
+      "ts": "2026-06-08T16:22:40.029Z",
+      "type": "evidence",
+      "message": "Added evidence EVD-mq5f636k",
+      "meta": {
+        "id": "EVD-mq5f636k"
+      },
+      "project": null
+    }
+  ],
+  "itgcControls": [],
+  "evidenceScores": [],
+  "controlLifecycle": [
+    {
+      "id": "LCY-mq2wes8c",
+      "controlName": "Enforce role  based access control and quarterly access reviews.",
+      "controlId": "CTL-mpwtr66m",
+      "phase": "Operating",
+      "owner": "IAM Manager",
+      "designDate": "",
+      "goLiveDate": "",
+      "nextReview": "",
+      "maturity": 4,
+      "notes": "",
+      "createdAt": "2026-06-06T22:02:00.684Z"
+    },
+    {
+      "id": "LCY-mq2wes8c",
+      "controlName": "Perform monthly cloud configuration reviews",
+      "controlId": "CTL-mpwtspxj",
+      "phase": "Operating",
+      "owner": "Cloud Infrastructure Manager",
+      "designDate": "",
+      "goLiveDate": "",
+      "nextReview": "",
+      "maturity": 4,
+      "notes": "",
+      "createdAt": "2026-06-06T22:02:00.684Z"
+    },
+    {
+      "id": "LCY-mq2wes8c",
+      "controlName": "Customer database requires MFA and encryption for customer data access.",
+      "controlId": "CTL-mpwttuim",
+      "phase": "Operating",
+      "owner": "Chief Data Officer",
+      "designDate": "",
+      "goLiveDate": "",
+      "nextReview": "",
+      "maturity": 4,
+      "notes": "",
+      "createdAt": "2026-06-06T22:02:00.684Z"
+    },
+    {
+      "id": "LCY-mq2wes8c",
+      "controlName": "Active Directory Required MFA for privileged Active Directory accounts.",
+      "controlId": "CTL-mpwtuuda",
+      "phase": "Operating",
+      "owner": "IT Operations Manager.",
+      "designDate": "",
+      "goLiveDate": "",
+      "nextReview": "",
+      "maturity": 4,
+      "notes": "",
+      "createdAt": "2026-06-06T22:02:00.684Z"
+    },
+    {
+      "id": "LCY-mq2wes8c",
+      "controlName": "Sensitive data is classified and handled according to data classification requirements.",
+      "controlId": "CTL-mq2vf3g6",
+      "phase": "Operating",
+      "owner": "Data Owner",
+      "designDate": "",
+      "goLiveDate": "",
+      "nextReview": "",
+      "maturity": 4,
+      "notes": "",
+      "createdAt": "2026-06-06T22:02:00.684Z"
+    },
+    {
+      "id": "LCY-mq2wes8c",
+      "controlName": "User identities are managed through a formal onboarding, modification, and termination process",
+      "controlId": "CTL-mq2vyalb",
+      "phase": "Operating",
+      "owner": "IAM Manager",
+      "designDate": "",
+      "goLiveDate": "",
+      "nextReview": "",
+      "maturity": 4,
+      "notes": "",
+      "createdAt": "2026-06-06T22:02:00.684Z"
+    },
+    {
+      "id": "LCY-mq2wes8c",
+      "controlName": "Password and authentication requirements are enforced for all user accounts",
+      "controlId": "CTL-mq2w1j2k",
+      "phase": "Operating",
+      "owner": "IAM Manager",
+      "designDate": "",
+      "goLiveDate": "",
+      "nextReview": "",
+      "maturity": 4,
+      "notes": "",
+      "createdAt": "2026-06-06T22:02:00.684Z"
+    },
+    {
+      "id": "LCY-mq2wes8c",
+      "controlName": "Employees complete annual security awareness and phishing training",
+      "controlId": "CTL-mq2w3m12",
+      "phase": "Operating",
+      "owner": "Security Trainer",
+      "designDate": "",
+      "goLiveDate": "",
+      "nextReview": "",
+      "maturity": 4,
+      "notes": "",
+      "createdAt": "2026-06-06T22:02:00.684Z"
+    },
+    {
+      "id": "LCY-mq2wes8c",
+      "controlName": "Security logs are collected and reviewed weekly for suspicious activity.",
+      "controlId": "CTL-mq2w5r07",
+      "phase": "Operating",
+      "owner": "Security Operations Team",
+      "designDate": "",
+      "goLiveDate": "",
+      "nextReview": "",
+      "maturity": 4,
+      "notes": "",
+      "createdAt": "2026-06-06T22:02:00.684Z"
+    }
+  ],
+  "cloudRiskScenarios": [],
+  "biaEntries": [],
+  "vendorAssessments": [],
+  "soxEntries": [],
+  "riskAppetiteStatements": [],
+  "kriEntries": [],
+  "bcmPlans": [],
+  "crosswalkMappings": [],
+  "unifiedControls": [],
+  "cmApplicability": {},
+  "projectFrameworks": [
+    {
+      "id": "ISO 27001",
+      "label": "ISO 27001",
+      "color": "#4338ca",
+      "shortLabel": "ISO"
+    },
+    {
+      "id": "NIST CSF",
+      "label": "NIST CSF 2.0",
+      "color": "#0891b2",
+      "shortLabel": "NIST"
+    },
+    {
+      "id": "SOC 2",
+      "label": "SOC 2 (TSC)",
+      "color": "#059669",
+      "shortLabel": "SOC2"
+    },
+    {
+      "id": "PCI DSS",
+      "label": "PCI DSS 4.0",
+      "color": "#dc2626",
+      "shortLabel": "PCI"
+    },
+    {
+      "id": "HIPAA",
+      "label": "HIPAA Security",
+      "color": "#7c3aed",
+      "shortLabel": "HIPAA"
+    },
+    {
+      "id": "GDPR",
+      "label": "GDPR",
+      "color": "#0284c7",
+      "shortLabel": "GDPR"
+    },
+    {
+      "id": "CIS Controls",
+      "label": "CIS Controls v8",
+      "color": "#0d9488",
+      "shortLabel": "CIS"
+    }
+  ]
+}
