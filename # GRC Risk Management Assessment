@@ -1,0 +1,266 @@
+GRC Risk Management Assessment
+
+Project Overview
+
+This project was completed using a Governance, Risk, and Compliance (GRC) simulator to gain hands-on experience with risk management, control implementation, framework mapping, evidence collection, and control testing.
+
+The objective was to understand how organizations identify risks, implement controls, validate those controls, and continuously improve their security posture. While I had previously studied many of these concepts through Security+ preparation, this project challenged me to apply them in a practical environment rather than simply memorizing definitions.
+
+⸻
+
+Project Scope
+
+The assessment included:
+
+* Asset Inventory
+* Risk Identification
+* Risk Assessment
+* Control Implementation
+* Framework Mapping
+* Gap Analysis
+* Risk Treatment Planning
+* Evidence Collection
+* Control Testing
+
+⸻
+
+Assets Identified
+
+The following assets were identified during the assessment:
+
+Customer Database
+
+Contains sensitive customer information and business-critical data.
+
+Identity and Access Management (IAM) System
+
+Used to manage user accounts, authentication, and authorization.
+
+AWS Cloud Environment
+
+Hosts infrastructure and services supporting business operations.
+
+Active Directory
+
+Provides centralized authentication and access management.
+
+⸻
+
+Risks Identified
+
+Several risks were identified during the assessment.
+
+Unauthorized Access
+
+Unauthorized users gaining access to sensitive customer information.
+
+Potential Impact:
+
+* Data breaches
+* Regulatory penalties
+* Reputational damage
+* Loss of customer trust
+
+⸻
+
+Excessive Permissions
+
+Users having more access than required to perform their job duties.
+
+Potential Impact:
+
+* Insider threats
+* Data exposure
+* Unauthorized changes
+
+⸻
+
+Cloud Security Misconfiguration
+
+Improperly configured cloud resources exposing data or systems.
+
+Potential Impact:
+
+* Public data exposure
+* Compliance violations
+* Service disruption
+
+⸻
+
+Controls Implemented
+
+To reduce identified risks, several controls were implemented.
+
+Multi-Factor Authentication (MFA)
+
+Requires users to provide multiple forms of verification before accessing systems.
+
+Business Benefit:
+
+Reduces the likelihood of unauthorized access due to compromised credentials.
+
+⸻
+
+Role-Based Access Control (RBAC)
+
+Ensures users receive only the permissions necessary to perform their responsibilities.
+
+Business Benefit:
+
+Supports least privilege and reduces excessive access.
+
+⸻
+
+Access Reviews
+
+Periodic reviews of user permissions and account access.
+
+Business Benefit:
+
+Ensures access remains appropriate as employees change roles or leave the organization.
+
+⸻
+
+Logging and Monitoring
+
+Tracks user activity and security events.
+
+Business Benefit:
+
+Improves visibility into potential security incidents and supports investigations.
+
+⸻
+
+Framework Mapping
+
+Controls were mapped to recognized compliance requirements including ISO 27001.
+
+The purpose of framework mapping was to demonstrate how implemented controls support security and compliance objectives.
+
+Examples included:
+
+* Access Management Controls
+* Acceptable Use Controls
+* Security Governance Requirements
+
+⸻
+
+Gap Analysis
+
+Gap analysis was performed to identify weaknesses, missing controls, and areas requiring improvement.
+
+Examples of identified gaps included:
+
+* Incomplete access reviews
+* Excessive permissions
+* Missing control validation activities
+
+The gap analysis helped create a roadmap for remediation efforts and continuous improvement.
+
+⸻
+
+Risk Treatment Plans
+
+Risk treatment plans were developed to address identified gaps and reduce organizational risk.
+
+Examples included:
+
+* Implementing MFA
+* Enforcing Role-Based Access Control
+* Conducting periodic access reviews
+* Strengthening monitoring activities
+
+The goal was to reduce both the likelihood and impact of identified risks.
+
+⸻
+
+Evidence Collection
+
+Evidence was collected to demonstrate that controls had been implemented.
+
+Examples included:
+
+* Screenshots
+* Configuration records
+* Documentation
+* Audit artifacts
+
+Evidence is important because it provides proof that a control exists and supports audit readiness.
+
+⸻
+
+Control Testing
+
+Control testing was performed to determine whether controls were functioning as intended.
+
+Examples included:
+
+* MFA validation
+* Access review verification
+* Permission reviews
+
+One of the biggest lessons learned was understanding the difference between evidence collection and control testing.
+
+Evidence demonstrates that a control exists.
+
+Control testing demonstrates that the control is actually working effectively.
+
+⸻
+
+Challenges Encountered
+
+The most difficult part of this project was understanding the overall GRC process.
+
+Studying for Security+ introduced me to many concepts, but completing a hands-on project was very different from watching videos or reviewing flashcards. Since much of this project was self-directed, there were several moments where I had to work through concepts using trial and error before they began to make sense.
+
+The area I struggled with most was gap analysis. Initially, I understood that a gap represented a weakness or missing control, but I did not fully understand how gap analysis connected to risk assessments, framework mapping, risk treatment planning, evidence collection, and control testing.
+
+Over time, I began to understand how each stage supports the next stage in the overall GRC lifecycle.
+
+⸻
+
+Key Lessons Learned
+
+The project started to make sense when I stopped focusing only on the process and started focusing on the purpose behind the process.
+
+I began asking myself:
+
+“How does this activity help protect an organization?”
+
+That shift helped me understand the value of controls, evidence collection, and testing.
+
+Some of the most important lessons learned include:
+
+* Risk management is a business process as much as a security process.
+* Assets, risks, controls, evidence, and testing are all connected.
+* Evidence proves controls exist.
+* Control testing proves controls work.
+* Gap analysis helps identify weaknesses before they become incidents.
+* Framework mapping demonstrates compliance alignment.
+* Effective GRC requires translating technical controls into business value.
+
+⸻
+
+What I Would Do Differently
+
+If I were starting this project again, I would spend more time understanding the relationship between:
+
+* Threats
+* Vulnerabilities
+* Risks
+
+Looking back, these concepts serve as the foundation for risk assessments, control selection, and remediation planning.
+
+A stronger understanding of these concepts early in the project would have made many later decisions easier.
+
+⸻
+
+Personal Reflection
+
+One aspect I enjoyed most about this project was seeing how GRC helps organizations proactively reduce risk.
+
+While GRC is different from technical security operations, it plays an important role in preventing attackers from successfully exploiting weaknesses within an organization.
+
+This project taught me that GRC is not simply compliance paperwork or documentation. It is a structured process that helps organizations identify risks, implement controls, validate effectiveness, and continuously improve their security posture.
+
+Most importantly, this project helped me transition from understanding cybersecurity concepts in theory to applying them in a practical environment and thinking more like a GRC Analyst.
