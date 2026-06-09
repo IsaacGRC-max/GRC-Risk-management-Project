@@ -121,6 +121,38 @@ All privileged accounts require MFA and successfully complete secondary authenti
 - NIST PR.AA
 - SOC 2 CC6
 - PCI DSS 8.4
+- ## Cloud Configuration Review
+
+### Control Objective
+Ensure cloud resources are configured securely and misconfigurations exposing sensitive data are identified and remediated.
+
+### Testing Procedure
+
+1. Review cloud security configuration standards.
+2. Obtain a list of cloud resources.
+3. Select a sample of cloud resources.
+4. Review storage permissions and network security settings.
+5. Verify logging and monitoring are enabled.
+6. Identify misconfigured resources.
+7. Document findings and remediation actions.
+
+### Evidence Collected
+
+- Cloud configuration screenshots
+- Security group settings
+- Storage access settings
+- Cloud monitoring logs
+
+### Expected Result
+
+Cloud resources are securely configured and sensitive data is not publicly exposed.
+
+### Framework Mapping
+
+- ISO 27001 A.8.9
+- NIST PR.PS
+- SOC 2 CC7
+- CIS Controls v8
 ## Repository Contents
 - Project screenshots
 - Documentation and project artifacts
