@@ -55,11 +55,6 @@ Users possess only the access necessary to perform their assigned duties.
 - ISO 27001 A.5.15
 - NIST PR.AA
 - SOC 2 CC6
-## Control Validation Procedures
-
-### RBAC and Quarterly Access Reviews
-...
-(keep everything you already added)
 
 ### MFA for Customer Database Access
 
