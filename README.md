@@ -55,7 +55,44 @@ Users possess only the access necessary to perform their assigned duties.
 - ISO 27001 A.5.15
 - NIST PR.AA
 - SOC 2 CC6
+## Control Validation Procedures
 
+### RBAC and Quarterly Access Reviews
+...
+(keep everything you already added)
+
+### MFA for Customer Database Access
+
+**Control Objective**
+Ensure all users accessing sensitive customer data are required to authenticate using multi-factor authentication (MFA).
+
+**Testing Procedure**
+
+1. Review MFA policy requirements.
+2. Obtain a list of users with database access.
+3. Select a sample of 5 user accounts.
+4. Verify MFA is enabled for each account.
+5. Review MFA configuration settings.
+6. Confirm access cannot be obtained without MFA.
+7. Document findings and remediation actions.
+
+**Evidence Collected**
+
+- MFA configuration screenshots
+- User account settings
+- Access logs
+- Security policy documentation
+
+**Expected Result**
+
+All users with access to customer data have MFA enabled and are required to complete secondary authentication before access is granted.
+
+**Framework Mapping**
+
+- ISO 27001 A.5.15
+- NIST PR.AA
+- SOC 2 CC6
+- PCI DSS 8.4
 ## Repository Contents
 - Project screenshots
 - Documentation and project artifacts
