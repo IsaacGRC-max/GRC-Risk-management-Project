@@ -154,5 +154,31 @@ Cloud resources are securely configured and sensitive data is not publicly expos
 - SOC 2 CC7
 - CIS Controls v8
 ## Repository Contents
+# Risk Treatment Summary
+
+| Risk | Control Implemented | Risk Response |
+|--------|------------------|----------------|
+| Excessive User Permissions | RBAC and Quarterly Access Reviews | Mitigate |
+| Customer Database Unauthorized Access | MFA for Customer Database Access | Mitigate |
+| Privileged Active Directory Account Compromise | MFA for Privileged Accounts | Mitigate |
+| Cloud Resource Misconfiguration | Monthly Cloud Configuration Reviews | Mitigate |
+
+## Residual Risk
+
+While the implemented controls significantly reduce risk, residual risk remains due to potential human error, control failures, or emerging threats. Continuous monitoring and periodic control testing are required to maintain effectiveness.
 - Project screenshots
 - Documentation and project artifacts
+- # Lessons Learned
+
+Through this assessment I gained practical experience in:
+
+- Asset identification
+- Risk assessment
+- Risk scoring
+- Control selection
+- Framework mapping
+- Evidence collection
+- Control validation
+- Risk treatment planning
+
+This project demonstrated how governance, risk, and compliance activities support organizational security objectives and regulatory compliance requirements.
