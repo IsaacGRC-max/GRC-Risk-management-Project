@@ -45,7 +45,53 @@
       "updatedAt": "2026-06-02T15:24:05.670Z"
     }
   ],
-  "vendors": [],
+      ["vendors]":
+    {
+      "id": "VND-001",
+      "name": "Amazon Web Services (AWS)",
+      "service": "Cloud infrastructure hosting for production environment, storage, and databases",
+      "riskTier": "Critical",
+      "dataAccess": "Hosts the AWS Cloud Environment asset (AST-mpwsbvvd), including customer database backend",
+      "owner": "Cloud Infrastructure Manager",
+      "contractStatus": "Active",
+      "lastAssessed": "2026-06-08",
+      "notes": "SOC 2 Type II report on file. Supports monthly cloud configuration review control CTL-mpwtspxj."
+    },
+    {
+      "id": "VND-002",
+      "name": "Okta",
+      "service": "Identity and access management, SSO, MFA enforcement",
+      "riskTier": "Critical",
+      "dataAccess": "Underpins IAM System asset (AST-mpws9y21) authentication and access control",
+      "owner": "IAM Manager",
+      "contractStatus": "Active",
+      "lastAssessed": "2026-06-08",
+      "notes": "Supports MFA controls CTL-mpwttuim and CTL-mpwtuuda, and access review control CTL-mpwtr66m."
+    },
+    {
+      "id": "VND-003",
+      "name": "Microsoft (Active Directory)",
+      "service": "On-premises/hybrid identity and privileged account management",
+      "riskTier": "High",
+      "dataAccess": "Underpins Active Directory asset (AST-mpwselsn) for employee accounts and admin access",
+      "owner": "IT Operations Manager",
+      "contractStatus": "Active",
+      "lastAssessed": "2026-06-08",
+      "notes": "Supports privileged account MFA control CTL-mpwtuuda."
+    },
+    {
+      "id": "VND-004",
+      "name": "Datadog",
+      "service": "Security log aggregation, monitoring, and alerting",
+      "riskTier": "Medium",
+      "dataAccess": "Ingests system and access logs; no direct customer data access",
+      "owner": "Security Operations Team",
+      "contractStatus": "Active",
+      "lastAssessed": "2026-06-08",
+      "notes": "Supports weekly log review control CTL-mq2w5r07 and finding FND-mq5fcf3y (continuous monitoring enhancement)."
+    }
+  ],
+,
   "policies": [],
   "risks": [
     {
