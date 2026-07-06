@@ -45,7 +45,7 @@
       "updatedAt": "2026-06-02T15:24:05.670Z"
     }
   ],
-      ["vendors]":
+  "vendors": [
     {
       "id": "VND-001",
       "name": "Amazon Web Services (AWS)",
@@ -91,7 +91,6 @@
       "notes": "Supports weekly log review control CTL-mq2w5r07 and finding FND-mq5fcf3y (continuous monitoring enhancement)."
     }
   ],
-,
   "policies": [
     {
       "id": "POL-001",
@@ -133,8 +132,7 @@
       "linkedControls": ["CTL-mpwtspxj"],
       "description": "Establishes secure baseline configuration standards for the AWS Cloud Environment and requires monthly configuration review."
     }
-  
-,
+  ],
   "risks": [
     {
       "id": "RSK-mpwsv4k2",
@@ -221,7 +219,6 @@
           "rationale": "The control restricts logical access based on business need and periodically validates permissions through access reviews."
         },
         {
-         {
           "framework": "CIS Controls",
           "ref": "CIS 6",
           "relationshipType": "Equal",
@@ -234,10 +231,7 @@
           "rationale": "AC-2 (Account Management) and AC-6 (Least Privilege) require role-based provisioning and periodic access review."
         }
       ],
-
-        }
-      ],
-      "rationale": "Role based access control ensures users receive access based on job responsibilities and business needs. Quarterly access reviews verify permissions remain appropriate and remove excessive privileges. This control reduces the risk of unauthorized access.",
+      "rationale": "Road based access control ensures users receive access based on job responsibilities and business needs. Quarterly access reviews verify permissions remain appropriate and remove excessive privileges. This control reduces the risk of unauthorized access.",
       "createdAt": "2026-06-02T16:01:02.734Z",
       "updatedAt": "2026-06-06T01:33:46.681Z"
     },
@@ -278,9 +272,6 @@
           "rationale": "Configuration reviews help ensure cloud systems maintain secure settings and reduce the risk of unauthorized access or exposure of sensitive data."
         },
         {
-        
-        
-                {
           "framework": "ISO 27001",
           "ref": "A.8.9",
           "relationshipType": "Equal",
@@ -339,7 +330,7 @@
           "relationshipType": "Equal",
           "rationale": "Encryption and strong authentication mechanisms help protect sensitive data and support technical safeguards for information security."
         },
-                      {
+        {
           "framework": "CIS Controls",
           "ref": "CIS 3.3",
           "relationshipType": "Equal",
@@ -351,16 +342,6 @@
           "relationshipType": "Equal",
           "rationale": "IA-2 (Identification and Authentication) requires MFA; SC-13 (Cryptographic Protection) requires encryption of sensitive data."
         }
-      
-
-        {
-          "framework": "NIST 800-53",
-          "ref": "IA-2, SC-13",
-          "relationshipType": "Equal",
-          "rationale": "IA-2 (Identification and Authentication) requires MFA; SC-13 (Cryptographic Protection) requires encryption of sensitive data."
-        }
-      
-    
       ],
       "rationale": "MFA restricts access to authorized users while encryption protects customer data from unauthorized disclosure. Together they reduce the risk of data breaches and support the protection of sensitive information.",
       "createdAt": "2026-06-02T16:03:07.582Z",
@@ -402,7 +383,7 @@
           "relationshipType": "Equal",
           "rationale": "MFA is required for privileged users to reduce the risk of credential compromise and unauthorized access."
         },
-              {
+        {
           "framework": "CIS Controls",
           "ref": "CIS 6",
           "relationshipType": "Equal",
@@ -414,10 +395,6 @@
           "relationshipType": "Equal",
           "rationale": "IA-2(1) requires MFA for privileged accounts; AC-6(5) restricts privileged account use."
         }
-      ],
-
-  
-  
       ],
       "rationale": "Privileged accounts present a higher risk if compromised. MFA provides an additional layer of authentication and helps prevent unauthorized access to administrative accounts.",
       "createdAt": "2026-06-02T16:03:54.046Z",
@@ -435,12 +412,18 @@
       "framework": "ISO 27001",
       "ref": "A.5.12",
       "frameworkRefs": [
-       {
+        {
           "framework": "ISO 27001",
           "ref": "A.5.12",
           "relationshipType": "Equal",
-          "rationale":"Data classification ensures sensitive information receives appropriate protection based on its value, sensitivity, and business 
-        
+          "rationale": "Data classification ensures sensitive information receives appropriate protection based on its value, sensitivity, and business requirements."
+        },
+        {
+          "framework": "NIST 800-53",
+          "ref": "RA-2",
+          "relationshipType": "Equal",
+          "rationale": "RA-2 (Security Categorization) requires information to be classified based on sensitivity and impact."
+        }
       ],
       "rationale": "Data classification ensures sensitive information receives appropriate protection based on its value, sensitivity, and business requirements.",
       "createdAt": "2026-06-06T21:34:15.606Z",
@@ -463,6 +446,12 @@
           "ref": "A.5.16",
           "relationshipType": "Equal",
           "rationale": "User identities are managed throughout their lifecycle to ensure appropriate access is granted and removed."
+        },
+        {
+          "framework": "NIST 800-53",
+          "ref": "AC-2(3), PS-4",
+          "relationshipType": "Equal",
+          "rationale": "AC-2(3) requires disabling accounts on termination; PS-4 requires personnel termination procedures."
         }
       ],
       "rationale": "User identities are managed throughout their lifecycle to ensure appropriate access is granted and removed.",
@@ -494,8 +483,6 @@
           "rationale": "IA-5 (Authenticator Management) governs password complexity and authentication requirements."
         }
       ],
-
-      ],
       "rationale": "",
       "createdAt": "2026-06-06T21:51:42.284Z",
       "updatedAt": "2026-06-06T21:51:42.284Z"
@@ -512,7 +499,7 @@
       "description": "All employees receive security awareness training to improve their understanding of cybersecurity threats, organizational policies, and their responsibilities for protecting information assets.",
       "rationale": "Employees receive training to recognize threats and follow security policies.",
       "frameworkRefs": [
-             {
+        {
           "framework": "ISO 27001",
           "ref": "A.6.3",
           "relationshipType": "Equal",
@@ -524,8 +511,6 @@
           "relationshipType": "Equal",
           "rationale": "AT-2 (Literacy Training and Awareness) requires periodic security training for all personnel."
         }
-      ],
-
       ],
       "createdAt": "2026-06-06T21:53:19.430Z",
       "updatedAt": "2026-06-06T21:56:13.949Z"
@@ -542,7 +527,7 @@
       "framework": "ISO 27001",
       "ref": "A.8.15",
       "frameworkRefs": [
-                {
+        {
           "framework": "ISO 27001",
           "ref": "A.8.15",
           "relationshipType": "Equal",
@@ -554,8 +539,6 @@
           "relationshipType": "Equal",
           "rationale": "AU-6 (Audit Record Review, Analysis, and Reporting) requires regular review of logs for suspicious activity."
         }
-      ],
-
       ],
       "rationale": "Security logs are monitored to identify suspicious activity and support incident investigations.",
       "createdAt": "2026-06-06T21:54:59.191Z",
