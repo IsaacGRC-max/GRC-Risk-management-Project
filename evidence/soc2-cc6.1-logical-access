@@ -1,0 +1,111 @@
+## SOC 2 Logical Access Lab
+
+I wanted hands-on evidence of SOC 2 control testing, not just documentation, so I built this out in a live GitLab repo. It walks through restricting access to a single authorized user, locking down the main branch so changes require elevated permissions, and pulling an activity log to show who did what and when. Mapped it back to SOC 2 CC 6.1 and NIST 800-53 (AC-2, AC-3, AU-2).
+# SOC 2 Evidence Automation Lab
+## Control Testing Runbook: CC 6.1 — Logical Access
+
+**Project:** soc2-evidence-automation
+**Repository:** gitlab.com/Milleri-group/soc2-evidence-automation
+**Tester:** Isaac Miller
+**Date:** July 07, 2026
+**Framework:** SOC 2 Trust Services Criteria
+**Related NIST 800-53 Mapping:** AC-2 (Account Management), AC-3 (Access Enforcement), AU-2 (Audit Events)
+
+---
+
+### 1. Control Objective
+
+**SOC 2 CC 6.1** requires that the entity implements logical access security software, infrastructure, and architectures over protected information assets to protect them from security events and to meet the entity's objectives.
+
+In practice, this means: access to systems and code is restricted to authorized individuals, changes are gated through a controlled process, and activity is logged with attribution.
+
+---
+
+### 2. Test Environment
+
+A GitLab repository (`soc2-evidence-automation`) was created and configured to demonstrate three components of logical access control: identity/access management, change control, and activity logging.
+
+---
+
+### 3. Test Procedures and Evidence
+
+#### 3.1 Access Restriction (Identity & Access Management)
+
+**Task performed:** Reviewed project membership and role assignment.
+
+**Method:**
+1. Navigated to Project → Manage → Members
+2. Reviewed account list, source of access, and assigned role
+
+**Result:**
+- Single member on the project: Isaac Miller (@Milleri)
+- Role: **Owner**
+- Access source: Inherited from Milleri-group (centralized group-level provisioning, not ad hoc project-level grants)
+- No additional or unauthorized accounts present
+
+**Control significance:** Demonstrates least-privilege provisioning — access is limited to a single authorized identity, and role inheritance from the group level shows access is managed centrally rather than granted inconsistently at the project level.
+
+**Evidence artifact:** `members-screenshot.png`
+
+---
+
+#### 3.2 Change Control (Branch Protection)
+
+**Task performed:** Verified protected branch configuration on `main`.
+
+**Method:**
+1. Navigated to Project → Settings → Repository → Protected Branches
+2. Reviewed permission settings for the `main` branch
+
+**Result:**
+- Branch: `main` (default branch)
+- Allowed to merge: **Maintainers**
+- Allowed to push: **Maintainers**
+- Direct pushes from non-Maintainer roles are blocked; changes below Maintainer level must go through a merge request
+
+**Control significance:** Prevents unauthorized or unreviewed changes to the production/default branch. Enforces a minimum access threshold before code can be modified, satisfying the access-enforcement component of CC 6.1.
+
+**Evidence artifact:** `protected-branches-screenshot.png`
+
+---
+
+#### 3.3 Activity Monitoring (Logging & Attribution)
+
+**Task performed:** Generated and reviewed a activity trail over a test period.
+
+**Method:**
+1. Performed a tracked change (edited README.md, committed to `main`)
+2. Navigated to Project → Manage → Activity
+3. Reviewed the resulting log for timestamp, user attribution, and action type
+
+**Result:**
+
+| Timestamp | User | Action |
+|---|---|---|
+| 47 seconds ago | Isaac Miller (@Milleri) | Pushed to branch `main` — commit `8201cdc8`, "Edit README.md" |
+| 16 minutes ago | Isaac Miller (@Milleri) | Pushed new branch `main` |
+| 16 minutes ago | Isaac Miller (@Milleri) | Created project Milleri-group/soc2-evidence-automation |
+
+**Control significance:** Each system event is timestamped and tied to a specific authenticated user identity, with the exact commit hash traceable to the change made. This satisfies the monitoring and non-repudiation expectations of logical access controls — actions can be reviewed, and responsibility for a change is never ambiguous.
+
+**Evidence artifact:** `activity-log-screenshot.png`
+
+---
+
+### 4. Conclusion
+
+| Component | CC 6.1 Requirement | Status |
+|---|---|---|
+| Access restriction | Only authorized users have system access | ✅ Pass — single Owner, group-inherited |
+| Change control | Changes are gated and cannot bypass review threshold | ✅ Pass — branch protection enforced |
+| Activity logging | All access/changes are logged with attribution | ✅ Pass — activity log timestamped and user-attributed |
+
+**Overall determination:** The controls tested collectively satisfy SOC 2 CC 6.1 (Logical Access). Access to the `soc2-evidence-automation` repository is restricted to an authorized identity, changes to the default branch require elevated privilege, and all activity is logged with full attribution and timestamps.
+
+---
+
+### 5. Limitations & Notes
+
+- GitLab's free tier does not provide a dedicated compliance-grade audit log (available on paid tiers); the project **Activity** feed was used as a functional substitute, which captures equivalent data (user, action, timestamp) for the purposes of this control test.
+- This test was conducted in a single-user lab environment. In a multi-user production environment, this same procedure would be extended to verify role segregation (e.g., confirming that Developer-level accounts cannot bypass branch protection) as an additional test step.
+
